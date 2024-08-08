@@ -1,11 +1,5 @@
 
 # Set up ngrok
-from pyngrok import ngrok
-public_url = ngrok.connect(8501, proto="http")
-print(f"Streamlit app will be available on: {public_url}")
-from pyngrok import ngrok
-
-ngrok.set_auth_token("2kNaCcS4Z5JXTHUJic0LchbQPhP_3WkRdooqFqg3Ve1ZXnrYh")
 # Streamlit app
 import streamlit as st
 from langchain_community.embeddings.spacy_embeddings import SpacyEmbeddings
@@ -65,9 +59,5 @@ def run_streamlit():
             st.write("Answer:")
             st.write(answer)
 
-# Run Streamlit in the background
-import os
-os.system("streamlit run app.py &")
 
-# Use the public ngrok URL to access the app
-print(f"Open the app in your browser: {public_url}")
+run_streamlit()
